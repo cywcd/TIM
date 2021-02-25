@@ -18,10 +18,13 @@
     "tim-js-sdk": "^2.8.5",
     "trtc-calling-js": "^0.6.0",
     "trtc-js-sdk": "^4.7.1",
+    "ts-loader": "^8.0.17",
     "tsignaling": "^0.3.0",
     "tweblive": "^1.1.1",
+    "typescript": "^4.2.2",
     "vue": "^2.6.11",
     "vue-clipboard2": "^0.3.1",
+    "vue-property-decorator": "^9.1.2",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
