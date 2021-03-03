@@ -12,6 +12,8 @@ import './assets/icon/tim.css'
 import trtcCalling from './trtc-calling'
 import TRTCCalling from 'trtc-calling-js'
 
+import './styles/message-send-bar.styl'
+
 window.tim = tim
 window.TIM = TIM
 window.TRTCCalling = TRTCCalling

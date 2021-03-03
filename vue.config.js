@@ -35,5 +35,21 @@ module.exports = {
         import: [path.resolve(__dirname, './src/assets/css/base.styl')]
       }
     }
+  },
+  // done 配置ts支持
+  configureWebpack: {   
+    resolve: { extensions: [".ts", ".tsx", ".js", ".json"] },   
+    module: {       
+      rules: [   
+        {   
+          test: /\.tsx?$/,   
+          loader: 'ts-loader',   
+          exclude: /node_modules/,   
+          options: {
+            appendTsSuffixTo: [/\.vue$/],   
+          }   
+        }       
+      ]   
+    }   
   }
 }

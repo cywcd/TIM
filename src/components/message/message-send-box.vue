@@ -1,6 +1,7 @@
 <template>
   <div id="message-send-box-wrapper" :style="focus ? {'backgroundColor': 'white'} : {}" @drop="dropHandler">
-    <div class="send-header-bar">
+    <message-send-bar></message-send-bar>
+    <!-- <div class="send-header-bar">
       <el-popover placement="top" width="400" trigger="click">
         <div class="emojis">
           <div v-for="item in emojiName" class="emoji" :key="item" @click="chooseEmoji(item)">
@@ -27,7 +28,7 @@
         <i class="group-live-icon"></i>
         <i class="group-live-icon-hover"></i>
       </div>
-    </div>
+    </div> -->
     <el-dialog title="发自定义消息" :visible.sync="sendCustomDialogVisible" width="30%">
       <el-form label-width="100px">
         <el-form-item label="data">
@@ -131,8 +132,8 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
-import smileIcon from '../../assets/image/smile.png'
 import callingMemberList from './trtc-calling/group-member-list'
+import MessageSendBar from '@/components/message-send-bar'
 import {
   Form,
   FormItem,
@@ -159,7 +160,8 @@ export default {
     ElRadioGroup: RadioGroup,
     ElRadio: Radio,
     ElTooltip: Tooltip,
-    ElRate: Rate
+    ElRate: Rate,
+    MessageSendBar
   },
   data() {
     return {
@@ -418,6 +420,7 @@ export default {
         conversationType: this.currentConversationType,
         payload: { text: this.messageContent }
       })
+      console.log(message, '---message')
       this.$store.commit('pushCurrentMessageList', message)
       this.$bus.$emit('scroll-bottom')
       this.tim.sendMessage(message).catch(error => {
