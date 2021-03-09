@@ -7,8 +7,6 @@
 </template>
  
 <script lang="ts">
-
-/// <reference path = "./types/message-send-bar.ts" />
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import SendMood from './components/SendMood.vue'
 import SendFile from  './components/SendFile.vue'
@@ -24,7 +22,7 @@ import SendPoint from  './components/SendPoint.vue'
   }
 })
 
-export default class Default extends Vue {
+export default class messageSendBar extends Vue {
   @Watch('name')
   getWatchValue(newVal: string, oldVal: string) {
     console.log(newVal, oldVal)

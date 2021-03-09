@@ -28,9 +28,18 @@ namespace messageSendBar {
     }
   }
 
+  // 发表情
+  export class sendMoodBar extends BarItem {
+    clickHandle(): void{}
+  }
+
   // @某人
-  export class sendPoint extends BarItem {
+  export class sendPointBar extends BarItem {
     
   }
   
+  // 发送文件
+  export class sendFileBar extends BarItem {
+    
+  }
 }

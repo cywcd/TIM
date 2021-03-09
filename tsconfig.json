@@ -9,7 +9,7 @@
     "experimentalDecorators": true,
     "strictFunctionTypes": true,
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
@@ -20,6 +20,8 @@
       ]
     },
     "lib": [
+      "ES6",
+      "ES7",
       "esnext",
       "dom",
       "dom.iterable",

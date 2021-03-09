@@ -150,6 +150,7 @@ import { emojiMap, emojiName, emojiUrl } from '../../utils/emojiMap'
 export default {
   name: 'message-send-box',
   props: ['scrollMessageListToButtom'],
+  inject: ['messageContentItem'],
   components: {
     callingMemberList: callingMemberList,
     ElInput: Input,
@@ -200,6 +201,7 @@ export default {
   mounted() {
     this.$refs['text-input'].addEventListener('paste', this.handlePaste)
     this.$bus.$on('reEditMessage', this.reEditMessage)
+    this.messageContent += this.messageContentItem;
   },
   beforeDestroy() {
     this.$refs['text-input'].removeEventListener('paste', this.handlePaste)
